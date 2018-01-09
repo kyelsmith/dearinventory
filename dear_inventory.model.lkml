@@ -14,3 +14,4 @@ datagroup: dear_inventory_default_datagroup {
 persist_with: dear_inventory_default_datagroup
 
 explore: products {}
+#test
