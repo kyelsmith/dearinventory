@@ -25,6 +25,11 @@ explore: sales {
     sql_on: ${sale_order.id} = ${sales.id} ;;
     relationship: many_to_one
   }
+  join: sale_invoice {
+    type: left_outer
+    sql_on: ${sale_invoice.id} = ${sales.id} ;;
+    relationship: many_to_one
+  }
   join: products {
     type: left_outer
     sql_on: ${sale_order.product_id} = ${products.id} ;;
