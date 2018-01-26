@@ -307,6 +307,21 @@ view: products {
     sql: ${tags} LIKE '%AutoCost%' OR  ${tags} LIKE '%ManualCost%';;
   }
 
+  dimension: warrantyreturnrequired {
+    type: yesno
+    sql: ${tags} LIKE '%WarrantyReturnRequired%';;
+  }
+
+  dimension: warrantydispose {
+    type: yesno
+    sql: ${tags} LIKE '%WarrantyDispose%';;
+  }
+
+  dimension: warranty_decision {
+    type: yesno
+    sql: ${tags} LIKE '%WarrantyReturnRequired%' OR  ${tags} LIKE '%WarrantyDispose%';;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, name]
