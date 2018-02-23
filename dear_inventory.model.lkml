@@ -37,6 +37,14 @@ explore: sales {
   }
 }
 
+explore: product_availability_list {
+  join: products {
+    type:  left_outer
+    sql_on:  ${product_availability_list.id} = ${products.id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: finished_goods {
   join: finished_good {
     type: left_outer
