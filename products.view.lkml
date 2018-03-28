@@ -317,6 +317,11 @@ view: products {
     sql: ${tags} LIKE '%WarrantyDispose%';;
   }
 
+  dimension:  BillOfMaterial {
+    type: yesno
+    sql: ${TABLE}.`Products-BillOfMaterial` ;;
+  }
+
   dimension: warranty_decision {
     type: yesno
     sql: ${tags} LIKE '%WarrantyReturnRequired%' OR  ${tags} LIKE '%WarrantyDispose%';;

@@ -69,4 +69,9 @@ explore: finished_goods {
     sql_on:  ${finished_goods.notes_salesorder} = ${sales.order_number} ;;
     relationship: many_to_one
   }
+  join: sale_main {
+    type: left_outer
+    sql_on: ${sales.id} = ${sale_main.id} ;;
+    relationship: one_to_one
+  }
 }
